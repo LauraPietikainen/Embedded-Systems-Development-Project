@@ -1,0 +1,263 @@
+﻿[
+    {
+        "id": "48898392.e67ebc",
+        "type": "tab",
+        "label": "Flow 1"
+    },
+    {
+        "id": "a8dc4b4d.1e9ea8",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "Tahoma,Geneva,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#000000",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "bcf1afb1.78174",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Embedded Systems Development Project",
+        "icon": "dashboard",
+        "order": 1
+    },
+    {
+        "id": "ada5339a.7df61",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "bcf1afb1.78174",
+        "order": 1,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "b4021a01.55b508",
+        "type": "ui_group",
+        "name": "Group 2",
+        "tab": "bcf1afb1.78174",
+        "order": 2,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "694ac8a.3b00538",
+        "type": "github-credentials",
+        "z": "",
+        "name": "Laura Pietikainen"
+    },
+    {
+        "id": "58b3bc76.9545e4",
+        "type": "inject",
+        "z": "48898392.e67ebc",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "x": 102,
+        "y": 199,
+        "wires": [
+            [
+                "41e4efc1.c3f3c"
+            ]
+        ]
+    },
+    {
+        "id": "3e960f1c.25a64",
+        "type": "ui_gauge",
+        "z": "48898392.e67ebc",
+        "name": "",
+        "group": "ada5339a.7df61",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 507,
+        "y": 233,
+        "wires": []
+    },
+    {
+        "id": "41e4efc1.c3f3c",
+        "type": "sensor-ds18b20",
+        "z": "48898392.e67ebc",
+        "name": "",
+        "sensorid": "28-00000829ae80",
+        "timer": "1",
+        "repeat": false,
+        "x": 304,
+        "y": 199,
+        "wires": [
+            [
+                "3e960f1c.25a64",
+                "bb2fd1c4.1fa98",
+                "464082b5.4b3dbc",
+                "85799ebd.b4464"
+            ]
+        ]
+    },
+    {
+        "id": "464082b5.4b3dbc",
+        "type": "ui_chart",
+        "z": "48898392.e67ebc",
+        "name": "",
+        "group": "b4021a01.55b508",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 476,
+        "y": 143,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "bb2fd1c4.1fa98",
+        "type": "debug",
+        "z": "48898392.e67ebc",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 524,
+        "y": 290,
+        "wires": []
+    },
+    {
+        "id": "85799ebd.b4464",
+        "type": "ui_text",
+        "z": "48898392.e67ebc",
+        "group": "ada5339a.7df61",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Temperature",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 545,
+        "y": 190,
+        "wires": []
+    }
+]
+
